@@ -1,0 +1,24 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using autoapp;
+
+namespace autoapp
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // 4. feladat 
+            List<Auto> autok = Auto.Beolvas("autok.csv");
+
+            // 5. feladat 
+            Console.WriteLine($" 5. feladat: Összesen {autok.Count} auto található a listában");
+
+            
+        }
+        
+    }
+}

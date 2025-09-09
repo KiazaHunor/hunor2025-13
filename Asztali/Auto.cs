@@ -1,0 +1,54 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace autoapp
+{
+    internal class Auto
+    {
+        public int sorszam;
+        public string marka;
+        public string modell;
+        public int gyartas;
+        public string szin;
+        public int eladott;
+        public int eladasiar;
+
+        public Auto( string sor) 
+        {
+            string[] tomb = sor.Split(';');
+            sorszam = int.Parse(tomb[0]);
+            marka = tomb[1];
+            modell = tomb[2];
+            gyartas = int.Parse(tomb[3]);
+            szin = tomb[4];
+            eladott = int.Parse(tomb[5]);
+            eladasiar = int.Parse(tomb[6]);
+
+        }
+
+        public override string ToString()
+        {
+            return $"{sorszam}. {modell} {gyartas}, {szin} - {eladott} db, {eladasiar} euro";
+        }
+
+        public static List<Auto> Beolvas(string fajlnev) 
+        {
+            List<Auto> list = new List<Auto>();
+            using (StreamReader elso = new StreamReader(fajlnev)) 
+            {
+                elso.ReadLine();
+                while (!elso.EndOfStream)
+                {
+                    string sor = elso.ReadLine();
+                    list.Add(new Auto(sor));
+                }
+            }
+            return list ;
+        }
+
+    }
+}
