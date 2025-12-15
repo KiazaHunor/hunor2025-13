@@ -1,0 +1,29 @@
+{
+  "valami": [
+    {
+      "cim": "Első kártya címe",
+      "szoveg": "Ez az első kártya szövege. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "kepek": ["kep1.jpg", "kep1.jpg", "kep1.jpg"]
+  },
+  {
+    "cim": "Második kártya címe",
+    "szoveg": "Ez a második kártya leírása. Integer faucibus mauris at justo porta luctus.",
+    "kepek": ["kep2.jpg", "kep2.jpg"]
+  },
+  {
+    "cim": "Harmadik kártya címe",
+    "szoveg": "Ez a harmadik kártya. Donec tempus lacus nec ipsum blandit.",
+    "kepek": ["kep3.jpg", "kep3.jpg"]
+  },
+  {
+    "cim": "Negyedik kártya címe",
+    "szoveg": "Ez a negyedik kártya szövege. Suspendisse gravida pretium est quis finibus.",
+    "kepek": ["kep4.jpg", "kep4.jpg", "kep4.jpg"]
+  },
+  {
+    "cim": "Ötödik kártya címe",
+    "szoveg": "Ez az ötödik kártya. Aenean luctus lobortis neque a tristique.",
+    "kepek": ["kep5.jpg", "kep5.jpg"]
+  }
+      ]
+      }

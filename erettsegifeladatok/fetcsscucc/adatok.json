@@ -1,0 +1,17 @@
+[
+  {
+    "cim": "Cirmos cica",
+    "szoveg": "Ez a cirmos cica imád a napon heverészni.",
+    "kep": "macska.jpeg"
+  },
+  {
+    "cim": "Kutya barát",
+    "szoveg": "A kutya a legjobb barátja a cicának.",
+    "kep": "kutya.jpg"
+  },
+  {
+    "cim": "Japán cica",
+    "szoveg": "Ez a japán cica különleges, mert szereti a sushit.",
+    "kep": "japancica.jpg"
+  }
+]

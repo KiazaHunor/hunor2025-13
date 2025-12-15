@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="navbar navbar-light bg-light ">
+                <div class="container-fluid">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown link
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <a class="navbar-brand" href="#">
+                        <p class="h3">EZ itt a fő cím a navbarban benne. Köszi szia.</p>
+                    </a>
+                    <a class="navbar-brand " href="#">
+                        <img src="japancica.jpg" class="rounded-3" alt="" width="60">
+                    </a>                    
+                </div>
+
+            </nav>
+        </div>
+        <div class="row border border-dark">
+            <div class="col-6 p-3 ">
+                <img id="elsoKep" src="japancica.jpg" class="rounded-3 w-50"  alt="#">                
+            </div>
+            <div class="col-6 p-0">
+                <p id="elsoSzoveg"></p>    
+            </div>     
+        </div>
+        <div class="row">
+            <div class="col-6 border border-dark">
+                <div>
+                    <img id="MasodikKep" src="japancica.jpg" class="w-50" alt="#">
+                    <p id="masodikSzoveg"></p>
+                </div>
+            </div> 
+            <div class="col-6 border border-dark">
+                <div>
+                    <img id="HarmadikkKep" src="japancica.jpg" class="w-50" alt="#">
+                    <p id="HarmadikSzoveg"></p>
+                </div>
+            </div> 
+        </div>
+            
+
+    </div>
+</body>
+<script>
+    let termekIdk ="";
+
+    function termekBetolt(id)
+    {
+        
+        {
+            fetch('https://fakestoreapi.com/products/'+id)
+            .then(x =>x.json())
+            .then(y => 
+            {
+                console.log(y);
+                document.getElementById('elsoKep').src=y.image;
+                document.getElementById("MasodikKep").src=y.image;
+                document.getElementById("HarmadikkKep").src=y.image;
+
+                let szoveg="";
+                szoveg+="<h2> <strong> Kategória: </strong> " +y.category +"</h2>"
+                + "<div> <strong> Leírás: </strong> " + y.description + "</div>";
+
+
+                document.getElementById("elsoSzoveg").innerHTML=szoveg;
+                document.getElementById("masodikSzoveg").innerHTML=szoveg;
+                document.getElementById("HarmadikSzoveg").innerHTML=szoveg;
+            });
+        }
+        
+
+        
+        console.log(id);
+    }
+
+    fetch('https://fakestoreapi.com/products')
+            .then(x => x.json())
+            .then(y => 
+            {
+                termekIdk=y.map(e => e.id);
+                console.log(y);
+                console.log(termekIdk);
+
+                termekBetolt(Math.floor(Math.random()* termekIdk.length));
+            });
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</html>
